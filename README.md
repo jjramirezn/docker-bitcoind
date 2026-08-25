@@ -32,7 +32,8 @@ This repo builds [`bitcoind`] in an [auditable way](https://github.com/lncm/dock
 * **All builds aim to be maximally auditable.**  After `git tag push`, the entire process is automated, with each step printed, and the code aiming to be easy to follow
 * All builds are based on [Alpine]
 * Cross-compiled builds are done using our (also auditable) [`qemu`]
-* To fit build and complete `make check` test suite, BerkeleyDB is build separately [here]
+* On `v28.0` and older, BerkeleyDB is build separately [here], so that the build fits within CI limits
+* Since `v29.0` Bitcoin Core is built with CMake, and BerkeleyDB is no longer needed (legacy wallet support was dropped upstream)
 * Each build produces binaries for: `amd64`, `arm64v8`, and `arm32v7`
 * All architectures are aggregated under an easy-to-use [Docker Manifest]
 * All [`git-tags`] are [build automatically], and with an [auditable trace]
@@ -64,6 +65,12 @@ This repo builds [`bitcoind`] in an [auditable way](https://github.com/lncm/dock
 
 > **NOTE:** For an always up-to-date list see: https://hub.docker.com/r/lncm/bitcoind/tags
 
+* `v31.1`
+* `v28.0`
+* `v27.2`
+* `v27.1`
+* `v27.0`
+* `v26.1`
 * `v26.0`
 * `v25.1`
 * `v25.0`
